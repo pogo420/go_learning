@@ -16,23 +16,22 @@ repo to store go scripts in the progress of learning
        variable_name := value // compiler infers the type```
 -  Go has interesting operator called, iota. It generates successive + ve interger constant : 0, 1,2,3...
 ```package main
+	import (
+		"fmt")
 
-import (
-	"fmt")
+	// kind of fill in excel
+	const (
+		_ = iota
+		a = 10* iota + 4
+		b
+		c
+	)
 
-// kind of fill in excel
-const (
-	_ = iota
-	a = 10* iota + 4
-	b
-	c
-)
-
-func main(){
-	fmt.Println(a,b,c)
-}
-// output is 
-14, 24, 34 
+	func main(){
+		fmt.Println(a,b,c)
+	}
+	// output is 
+	14, 24, 34 
 ```
-  
+- Ola
    
