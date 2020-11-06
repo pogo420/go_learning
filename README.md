@@ -77,5 +77,14 @@ repo to store go scripts in the progress of learning
      _, ispresent := sample_map2["gupai"] // to check if key is present or not.
 	fmt.Println(ispresent)	```
  - Interesting switch pointers
-     -  No need for break, fallthrough is not compulsory
-     - switch can be used for type check as well 
+     -  No need for break in cases, fallthrough is not compulsory
+     -  switch can be used for type check as well 
+     ```switch(i){
+	case 1,5,10:
+		fmt.Println("Ola1")
+	case 3:
+		fmt.Println("Ola2")
+	default:
+		fmt.Println("default")
+	}```
+ - Struct:
