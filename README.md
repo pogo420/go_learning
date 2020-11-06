@@ -12,6 +12,27 @@ repo to store go scripts in the progress of learning
 - Default value of all variables are zero. No garbage values.
 - If we define a variable we need to use it, otherwise compiler will through error.
 - Defining varables:
-   ` var variable_name type = value // we are defining expicitly 
-   ` variable_name := value // compiler infers the type
+   ``` var variable_name type = value // we are defining expicitly
+       variable_name := value // compiler infers the type```
+-  Go has interesting operator called, iota. It generates successive + ve interger constant : 0, 1,2,3...
+```package main
+
+import (
+	"fmt")
+
+// kind of fill in excel
+const (
+	_ = iota
+	a = 10* iota + 4
+	b
+	c
+)
+
+func main(){
+	fmt.Println(a,b,c)
+}
+// output is 
+14, 24, 34 
+```
+  
    
