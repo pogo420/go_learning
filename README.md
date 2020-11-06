@@ -156,4 +156,28 @@ func main(){
 		}
 		//output : 1, 3 and 2
       ```
-- Additinonal new() is used for creating empty object new(struct) returns object of struct
+- Additinonal new() is used for creating empty object new(struct) returns object of struct.
+- nil in place of None or null
+- Functions:
+    - sample function
+	 ```func test(name string) string{
+	 
+		return name+"---"
+		}```
+    - passing a pointer is faster and memory efficient in between function calls
+    - maps and slices act as pass by reference in function calls
+    - returning a variable as pointer from a function ? go promotes the variable into heap from stack memory.
+    - returning multiple values by comma :  return a, b
+    - we have method in go, its defined with the context of struct.
+      ```func main(){
+      gr := greeter { 
+		name: "French",
+		greetings: "OLA",
+		}
+		gr.greet() 
+
+		}
+		func (g greeter) greet(){ // pass by value here 
+		fmt.Println(g.name, g.greetings)
+		}
+      ```
