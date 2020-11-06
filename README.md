@@ -164,11 +164,13 @@ func main(){
 	 
 		return name+"---"
 		}```
+		
     - passing a pointer is faster and memory efficient in between function calls
     - maps and slices act as pass by reference in function calls
     - returning a variable as pointer from a function ? go promotes the variable into heap from stack memory.
     - returning multiple values by comma :  return a, b
     - we have method in go, its defined with the context of struct.
+    
       ```func main(){
       gr := greeter { 
 		name: "French",
