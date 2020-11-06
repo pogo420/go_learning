@@ -126,3 +126,21 @@ repo to store go scripts in the progress of learning
 
 		fmt.Println(b)
       ```
+ - Pointers:
+     - pointer stores the address of the types variable
+     - & is called aaddress off operator
+     - * is for dereference. Another usage: pointer variable declaration.
+     - IMP: pointer arithmetic is not allowed in go directly , use unsafe package for these operations.
+     - null pointers are assigned value <nil> unlike c or cpp they have null pointers.
+	
+```
+func main(){
+	var a int = 42
+	var a_ptr *int  // delaire a pointer
+	a_ptr = &a  // & returns the address
+	fmt.Println(a,a_ptr, *a_ptr, &a_ptr)  // * returns the value of that address
+	*a_ptr ++ // increasing the value 
+	fmt.Println(a,a_ptr, *a_ptr, &a_ptr)  // * returns the value of that address
+}
+```
+- Additinonal new() is used for creating empty object new(struct) returns object of struct
