@@ -28,9 +28,11 @@ fmt.Println(i)
 if i > 20{
 break
 }
-
-
-
+}
+arr := [5]int{34,5,6,789,9}
+fmt.Println("===============================")
+for i, v:= range arr{ // iterator vs values
+fmt.Println(i, v)
 }
 
 }
