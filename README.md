@@ -33,5 +33,7 @@ repo to store go scripts in the progress of learning
 	// output is 
 	14, 24, 34 
 ```
-- Ola
+- Important pointers for constants
+    - we should assign during compile time.
+    - shadow works for constant ( we can overwrite)
    
