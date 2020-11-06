@@ -143,4 +143,17 @@ func main(){
 	fmt.Println(a,a_ptr, *a_ptr, &a_ptr)  // * returns the value of that address
 }
 ```
+- Defer:
+    - statements with defer keyword, before returning a function: defer statement are executed.
+    - defer is perfect for cleanup operations.
+    - defer is evaluated based on the values at the time when defer is called not during execution.
+    - Multiple defers are excuted in LILO
+      ```
+      func main(){
+		fmt.Println(1)
+		defer fmt.Println(2)
+		fmt.Println(3)
+		}
+		//output : 1, 3 and 2
+      ```
 - Additinonal new() is used for creating empty object new(struct) returns object of struct
