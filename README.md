@@ -36,4 +36,28 @@ repo to store go scripts in the progress of learning
 - Important pointers for constants
     - we should assign during compile time.
     - shadow works for constant ( we can overwrite)
-   
+- Array, Its homogeneous, static and contiguous memory blocks.
+  ```
+  	grades:=[3]int {90, 89, 78} // array assignment 
+	
+	fmt.Println(grades)    // similar to python
+	fmt.Println(grades[2]) // indexing 
+	
+	var stud [3]string // only define 
+	fmt.Println(stud)
+	stud[2] = "gupau"
+	fmt.Println(stud)
+	fmt.Println(len(stud))
+	```
+ - Slice, similar to python list it can grow  it size but homogeneous.
+   ```
+        slc:= make([]int, 1,10)  // creates a slice
+	slc:=[]int{1,2,3} // slice  another way
+	fmt.Println(slc, len(slc), cap(slc)) // as its dynamic its has a inintial capacity	
+	
+	slc = append(slc, 10)  // append opeations
+	fmt.Println(slc, len(slc), cap(slc))	
+	slc = append(slc, []int{12,89,70}...)  // spreading operator
+	fmt.Println(slc, len(slc), cap(slc))	
+	```
+ - Maps
