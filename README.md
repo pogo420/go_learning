@@ -60,4 +60,22 @@ repo to store go scripts in the progress of learning
 	slc = append(slc, []int{12,89,70}...)  // spreading operator
 	fmt.Println(slc, len(slc), cap(slc))	
 	```
- - Maps
+ - Maps, they are similar to python dictionaries.
+    - slice can not be map index.
+    - map should end with comma.
+    - maps are not ordered like python dictionary.
+    - delete using builtin function.
+    - for index not present it returns zero.
+    ```	// initializtion
+	sample_map := map[string]int{
+	"1": 1,
+	"two": 2,
+	} 
+	```
+     - Dealing with empty values
+     ```
+     _, ispresent := sample_map2["gupai"] // to check if key is present or not.
+	fmt.Println(ispresent)	```
+ - Interesting switch pointers
+     -  No need for break, fallthrough is not compulsory
+     - switch can be used for type check as well 
