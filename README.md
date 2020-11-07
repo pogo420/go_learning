@@ -180,4 +180,35 @@ func main(){
 - Sample function
     
 	 ```  func test(name string) string {  return name+"---" }```
-- Place holder  
+- Interface
+    - Interfaces contains method declaration 
+    - Methods implicitly implements an interface via type context
+    - Context of method can be of any type(user defined).
+    - When we do interface_type.method() it find for the implementation with defined method with the context.
+    - We ability to embedded interfaces like struct, combining interfaces.
+    - Examples:
+      ```	package main
+		import (
+			"fmt"
+		)
+
+		type Writer interface {
+			write(data string) (string, error)
+		}
+
+		type StdWriter struct {
+			parameter string
+		}
+		// implementing methods 
+		func (st StdWriter)write(value string) (string, error){
+
+			return st.parameter + value, nil
+		}
+
+		func main(){
+			fmt.Println("Hellow")
+			var wr Writer = StdWriter{}
+			fmt.Println(wr.write("Ola"))
+		}
+      ```
+ - Placeholder 
