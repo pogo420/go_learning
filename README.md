@@ -224,3 +224,5 @@ func main(){
      - In main we can import packages in utility_packages by 
          `import ("module_name/utility_packages")`
      - To import a custom package, package must be in a subfolder.
+     - go modules makes the dependency managent easier.
+     
