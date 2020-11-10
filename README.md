@@ -181,7 +181,13 @@ func main(){
     
 	 ```  func test(name string) string {  return name+"---" }```
 - Interface
-    - Interfaces contains method declaration 
+    - Go does not have classes. However, you can define methods on types. 
+    - You can declare a method on non-struct types, too. 
+    - You cannot declare a method with a receiver whose type is defined in 
+        - another package 
+        - built-in types such as int
+    - You can declare methods with pointer receivers. 
+    - Interfaces contains method declaration. 
     - Methods implicitly implements an interface via type context
     - Context of method can be of any type(user defined).
     - When we do interface_type.method() it find for the implementation with defined method with the context.
