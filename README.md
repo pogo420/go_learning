@@ -211,4 +211,16 @@ func main(){
 			fmt.Println(wr.write("Ola"))
 		}
       ```
- - Placeholder 
+ - Packages and Modules:
+     - Packages are collection of functions, methods, etcs.
+     - Modules are collection of packages.
+     - A go project is of strucure 
+         - project_root/
+         - main.go
+         - utility_packages/
+         - test/
+     - To use any custom packages, we need to create module, in project root
+         `go mod init <module_name its mostly the root folder name>`
+     - In main we can import packages in utility_packages by 
+         `import ("module_name/utility_packages")`
+     - To import a custom package, package must be in a subfolder.
