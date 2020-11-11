@@ -232,3 +232,38 @@ func main(){
      - To import a custom package, package must be in a subfolder.
      - go modules makes the dependency managent easier.
      
+  - Concurrency in Go:
+      - Go has builtin high level concurrency.
+      - Threads are smallest unit of processing tasks in OS.
+      - Threads --> shared memory while process have seperate memory.
+      - A process has multiple threads.
+      - Linux treats threads and process as same entity, all are tasks.
+      - With fork() --> min sharing of resources
+      - With pthread_create() --> max sharing of resources.
+      - Drawback of threads:
+          - Every threads needs a copy of stack(~1MB each). When thread number increases this memory increases drastically.
+	  - A thread writes a lot of registers, increasing theads is an overhead.
+	  - Creating and teardown required OS calls. Resuing is better.
+      - Go comes with goroutines which work in virtual space. OS sees single user requesting.    
+      - Global variable GOMAXPROCS --> max # threads to be created by os. For best performance it must be equal to # cores.
+      - Channel:
+          - Channel are mode for communication between goroutines.
+          - Deafult: Sends and receives block until the other side is ready. This 
+	    allows goroutines to synchronize without explicit locks or condition variables.
+          - we can create buffered channel. when buffer is full receive is blocked.
+          - v, ok := <-ch, ok is false if there are no more values to receive and the channel is closed.
+          - The loop for i := range c receives values from the channel repeatedly until it is closed.
+          - Sender can close the channel, never the receiver. Sending on a closed channel will cause a panic.
+          - Channels aren't like files; you don't usually need to close them. Closing is only necessary when the 
+            receiver must be told there are no more values coming, such as to terminate a range loop.
+       - Select block:
+           - A select blocks until one of its cases can run,
+           - then it executes that case. It chooses one at random if multiple are ready.
+       - mutual exclusion-> We make the go routines mutually exclusive.
+           - We achive this my sync.mutex package.
+           - we have Two methods:
+               - Lock
+               - Unlock
+           - We can define a block of code to be executed in mutual exclusion by surrounding 
+           - it with a call to Lock and Unlock.
+           - We can also use defer to ensure the mutex will be unlocked.
