@@ -8,3 +8,5 @@ require (
 )
 
 replace greetings => ../greetings
+
+replace advancetypes => ../advancetypes
