@@ -13,8 +13,18 @@ func apiCalls(ctx context.Context, data string, output chan string) {
 }
 
 func main() {
+	/*
+		Two variaties of context
+		1. With Done or cancelFunc:
+			a. WithCancel
+			b. WithDeadline
+			c. WithTimeout
 
-	ctx := context.Background()
+		2. With value
+			a. WithValue // providing value
+	*/
+
+	ctx := context.Background() // We can use context.TODO() as well same thing
 	ctx_derived, cancelFunc := context.WithTimeout(ctx, 6*time.Second)
 
 	api_response := make(chan string)
@@ -28,5 +38,4 @@ func main() {
 		log.Println("Time exceed..")
 		cancelFunc()
 	}
-
 }
